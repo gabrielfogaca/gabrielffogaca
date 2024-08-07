@@ -1,0 +1,170 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #5de0e6, #004aad);
+}
+
+.center {
+  width: 900px;
+  height: 780px;
+  background: linear-gradient(to right, #004aad, #5de0e6);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  border: 2px solid #000;
+  color: white;
+  padding: 0;
+  border-radius: 15px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-bottom: 2px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+.accordion {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  outline: none;
+  transition: 0.4s;
+  flex-grow: 1;
+}
+
+.accordion:hover {
+  /* background-color: rgba(#004aad, 0.1); */
+  background: #004aad;
+  border-radius: 15px;
+}
+
+/* .content {
+  flex: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.active {
+  display: flex;
+} */
+
+.content {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.8s ease, height 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.content.active {
+  opacity: 1;
+  height: auto;
+  transition: opacity 0.8s ease, height 0.8s ease;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.home-leftSide h3 {
+  margin: 0 0 10px 0;
+}
+
+.home-leftSide span {
+  margin-bottom: 15px;
+  padding: 10px
+}
+.home-leftSide button {
+  padding: 10px 20px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.home-leftSide a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-leftSide button:hover {
+  background-color: #005bbb;
+}
+
+.home-rightSide{
+  object-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.profilePhoto{
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 450px;
+  height: 710px;
+  border-radius: 0px 0px 11px 0px;
+}
+
+.experiencia{
+  position: relative;
+  text-align: justify;
+  padding: 50px;
+}
+
+.expin{
+  padding: 30px 15px 15px 30px; 
+}
+
+.experiencia a{
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+
+.experiencia li{
+  list-style: none;
+}
+
+.unijuiLogo{
+  padding: 5px;
+  width: 45px;
+  height: 40px;
+}
+
