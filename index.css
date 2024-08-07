@@ -4,7 +4,12 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #5de0e6, #004aad);
+  background: linear-gradient(to bottom, #192627, #004aad); 
+  /* #192627 */
+}
+
+.stylenavbar{
+  font-family: 'Comforter', cursive;
 }
 
 .center {
@@ -23,7 +28,7 @@ body, html {
 
 .navbar {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-bottom: 2px solid #000;
   box-sizing: border-box;
@@ -46,22 +51,9 @@ body, html {
 }
 
 .accordion:hover {
-  /* background-color: rgba(#004aad, 0.1); */
   background: #004aad;
   border-radius: 15px;
 }
-
-/* .content {
-  flex: 1;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.active {
-  display: flex;
-} */
 
 .content {
   overflow: hidden;
@@ -166,5 +158,60 @@ body, html {
   padding: 5px;
   width: 45px;
   height: 40px;
+}
+
+.certificates a{
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.certificates button{
+  padding: 10px 20px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.certificates button:hover {
+  background-color: #005bbb;
+}
+
+.certificates div{
+  padding: 15px;
+}
+
+.certificates img{
+  width: 80px;
+}
+
+.projetos{
+position: relative;
+}
+
+.projetos div{
+height: 500px;
+}
+
+.projetos img{
+  width: 400px;
+  border-radius: 15px;
+}
+
+.projetos button{
+  padding: 10px 20px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.projetos button:hover {
+  background-color: #005bbb;
 }
 
