@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="imagex/png" href="imgs/url.ico">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
         <button class="accordion" onclick="showContent('Certificados')">Certificados</button>
         <button class="accordion" onclick="showContent('projects')">Projetos</button>
       </nav>
-      <div id="home" class="content active">
+      <div id="home" class="content active" style="display: block;">
         <div class="row">
           <div class="col home-leftSide">
             <h1 class="heading" data-target-resolver></h1>
@@ -50,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div id="experience" class="content">
+      <div id="experience" class="content" style="display: none;">
         <div class="container experiencia">
           <div class="expin">
             <div>
@@ -76,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div id="Certificados" class="content">
+      <div id="Certificados" class="content" style="display: none;">
         <div class="container text-center certificates">
           <div class="row row-cols-1 row-cols-sm-2">
             <div class="col">
@@ -135,9 +136,9 @@
           </div>
         </div>
       </div>
-      <div id="projects" class="content">
+      <div id="projects" class="p1 content" style="display: none;">
         <div class="container text-center">
-          <div class="row row-cols-2 projetos">
+          <div class="row col-md-auto projetos">
             <div class="col">
               <h3>MyZoo</h3>
               <img src="imgs/MyZoo.jpg" alt="website_Myzoo">
@@ -168,12 +169,17 @@
       var contents = document.querySelectorAll('.content');
       contents.forEach(function (content) {
         content.classList.remove('active');
+        content.style.display = 'none'; // Oculta os desativados
       });
 
       // Mostra o conteúdo selecionado
-      document.getElementById(contentId).classList.add('active');
+      var selectedContent = document.getElementById(contentId);
+      selectedContent.classList.add('active');
+      selectedContent.style.display = 'block'; // Exibe o conteúdo ativo
     }
   </script>
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
