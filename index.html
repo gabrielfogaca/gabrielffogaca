@@ -34,7 +34,9 @@
             <h1 class="heading" data-target-resolver></h1>
             <span>Front End Developer & UI/UX Designer, atualmente atuando como Freelancer. Gosto de passar o tempo jogando, assistindo séries, animes e desenvolvendo novos projetos.</span>
             <div>
-              <button>Contato</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Contato
+              </button>
               <a href="https://github.com/gabrielfogaca" target="_blank">
                 <i class="bi bi-github"></i>
               </a>
@@ -160,6 +162,36 @@
       </div>
   </section>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Entre em Contato!</h5>
+        </div>
+        <div class="modal-body">
+          <form target="_blank" action="https://formsubmit.co/gabrielfurlanfogaca@gmail.com" method="POST">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" name="name" class="form-control" placeholder="Nome" required>
+                </div>
+                <div class="col">
+                  <input type="email" name="email" class="form-control" placeholder="Endereço de Email" required>
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_next" value="https://gabrielfogaca.github.io/gabrielffogaca/">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Assunto" class="form-control" name="message" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

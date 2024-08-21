@@ -251,6 +251,19 @@ height: 500px;
   background-color: #005bbb;
 }
 
+.form-row div{
+  padding: 0px 0px 5px 0px;
+}
+
+.form-group{
+  padding: 0px 0px 5px 0px;
+}
+
+form button{
+  position: relative;
+  float: inline-end;
+}
+
 /* Responsividade para iPad Mini (768x1025) */
 @media screen and (min-width: 706px) and (max-width: 768px) {
   body, html {
