@@ -5,6 +5,7 @@ body, html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #192627, #004aad); 
+  z-index: -2;
   /* #192627 */
 }
 
@@ -24,6 +25,41 @@ body, html {
   color: white;
   padding: 0;
   border-radius: 15px;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+.center::after, .card::before{
+  content: '';
+  position: absolute;
+  width: 905px;
+  height: 785px;
+  background-image: conic-gradient(from var(--angle), transparent 90%, white);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 10px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+filter: blur(1.5rem);
+opacity: 0.5;
+}
+
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }  
+  to{
+    --angle: 360deg;
+  }
 }
 
 .navbar {
@@ -215,235 +251,67 @@ height: 500px;
   background-color: #005bbb;
 }
 
-/* Responsividade para iPhone SE (375x667) */
-@media screen and (max-width: 375px) {
-  body, html{
-      background: linear-gradient(to bottom, #192627, #004aad); 
-      height: auto;
-  }
-
-  .center {
-    position: relative;
-    width: 340px;
-    height: auto;
-    padding: 5px;
-  }
-
-  .navbar {
-    padding: 5px; /* Reduzir o padding */
-    flex-direction: column; /* Alterar a direção para coluna */
-    border-radius: 15px;
-  }
-
-  .accordion {
-    font-size: 14px; /* Diminuir o tamanho da fonte */
-    padding: 8px; /* Reduzir o padding */
-  }
-
-  .content {
-    font-size: 14px; /* Diminuir o tamanho da fonte */
-    padding: 10px; /* Adicionar padding interno */
-  }
-
-  .row {
-    flex-direction: column; /* Alterar direção para coluna */
-  }
-
-  .col {
-    margin-bottom: 15px; /* Adicionar espaçamento inferior */
-  }
-
-  .home-leftSide h3 {
-    font-size: 18px; /* Ajustar o tamanho da fonte */
-  }
-
-  .home-leftSide button {
-    padding: 8px 16px; /* Reduzir padding do botão */
-    font-size: 14px; /* Ajustar tamanho da fonte */
-  }
-
-  .home-rightSide {
-    height: auto; /* Deixar a altura automática */
-    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
-  }
-
-  .experiencia {
-    padding: 20px; /* Reduzir padding interno */
-  }
-
-  .expin {
-    padding: 20px 10px 10px 20px; /* Reduzir padding interno */
-  }
-
-  .projetos div {
-    height: auto; /* Deixar a altura automática */
-  }
-
-  .projetos img {
-    width: 300px; /* Ajustar largura da imagem */
-  }
-
-  .projetos span{
-    width: 300px;
-  }
-
-  .projetos button {
-    padding: 8px 16px; /* Reduzir padding do botão */
-    font-size: 14px; /* Ajustar tamanho da fonte */
-  }
-
-  .profilePhoto{
-    position: relative;
-    top: 60px;
-    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
-    height: auto; 
-    border-radius: 15px;
-  }
-
-}
-
-/* Responsividade para iPhone XR (414x896) */
-@media screen and (max-width: 414px) {
-  body, html {
-    background: linear-gradient(to bottom, #192627, #004aad); 
-    height: auto;
-    min-height: 100%; /* Garantir que o corpo preencha toda a altura */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-leftSide{
-    width: 400px;
-  }
-
-  .center {
-    position: relative;
-    width: 380px;
-    height: auto; /* Garantir que a altura seja automática */
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribuir o conteúdo igualmente */
-    min-height: 100%; /* Garantir que o conteúdo preencha toda a altura */
-    box-sizing: border-box; /* Incluir padding e borda no cálculo da altura */
-  }
-
-  .navbar {
-    padding: 10px;
-    flex-direction: row;
-    border-radius: 15px;
-  }
-
-  .accordion {
-    font-size: 16px;
-    padding: 5px;
-  }
-
-  .content {
-    font-size: 16px;
-    padding: 15px;
-    flex-grow: 1; /* Permitir que o conteúdo cresça para preencher o espaço */
-  }
-
-  .row {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .col {
-    margin-bottom: 20px;
-  }
-
-  .home-leftSide h3 {
-    font-size: 20px;
-  }
-
-  .home-leftSide button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .home-rightSide {
-    height: auto;
-    width: 100%;
-  }
-
-  .experiencia, .certificates {
-    padding: 20px;
-    flex-grow: 1;
-    overflow-y: auto;
-    max-height: 60vh;
-  }
-
-  .expin, .certificates div {
-    padding: 20px 15px 15px 20px;
-  }
-
-  .projetos {
-    display: flex;
-    flex-direction: column; /* Alinhar projetos verticalmente */
-    align-items: center; /* Centralizar o conteúdo */
-  }
-
-  .projetos div {
-    top: -30px;
-    height: auto;
-    width: 100%; /* Ocupa toda a largura disponível */
-    margin-bottom: 20px; /* Espaçamento entre os projetos */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centralizar o conteúdo */
-  }
-
-  .projetos img {
-    width: 100%; /* Largura total da imagem dentro do div */
-    border-radius: 15px;
-  }
-
-  .projetos span {
-    width: 100%;
-    text-align: center;
-  }
-
-  .projetos button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .profilePhoto {
-    position: relative;
-    width: 340px;
-    height: 525px;
-    border-radius: 15px;
-  }
-}
 
 /* Responsividade para iPhone 14 Pro Max (430x932) */
 @media screen and (max-width: 430px) {
   body, html {
     background: linear-gradient(to bottom, #192627, #004aad); 
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
   }
 
   .center {
     position: relative;
-    width: 400px;
-    height: 800px;
+    width: 390px;
+    height: 790px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     box-sizing: border-box;
+    left: 3px;
+  }
+
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .center::after, .card::before{
+    content: '';
+    position: absolute;
+    width: 397px;
+    height: 797px;
+    background-image: conic-gradient(from var(--angle), transparent 90%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+  }
+  .card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  }
+  
+  @keyframes spin {
+    from{
+      --angle: 0deg;
+    }  
+    to{
+      --angle: 360deg;
+    }
   }
 
   .navbar {
-    padding: 10px;
+    padding: 6px;
     flex-direction: row;
     border-radius: 15px;
   }
@@ -542,3 +410,279 @@ height: 500px;
   }
 }
 
+/* Responsividade para iPhone XR (414x896) */
+@media screen and (max-width: 414px) {
+  body, html {
+    background: linear-gradient(to bottom, #192627, #004aad); 
+    height: 860px;
+    min-height: 100%; /* Garantir que o corpo preencha toda a altura */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+  }
+
+  .home-leftSide{
+    width: 400px;
+  }
+
+  .center {
+    left: -1px;
+    position: relative;
+    width: 380px;
+    height: 800px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuir o conteúdo igualmente */
+    min-height: 100%; /* Garantir que o conteúdo preencha toda a altura */
+    box-sizing: border-box; /* Incluir padding e borda no cálculo da altura */
+  }
+
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .center::after, .card::before{
+    content: '';
+    position: absolute;
+    width: 385px;
+    height: 805px;
+    background-image: conic-gradient(from var(--angle), transparent 90%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+  }
+  .card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  }
+  
+  @keyframes spin {
+    from{
+      --angle: 0deg;
+    }  
+    to{
+      --angle: 360deg;
+    }
+  }
+
+  .navbar {
+    padding: 10px;
+    flex-direction: row;
+    border-radius: 15px;
+  }
+
+  .accordion {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .content {
+    font-size: 16px;
+    padding: 15px;
+    flex-grow: 1; /* Permitir que o conteúdo cresça para preencher o espaço */
+  }
+
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    margin-bottom: 20px;
+  }
+
+  .home-leftSide h3 {
+    font-size: 20px;
+  }
+
+  .home-leftSide button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .home-rightSide {
+    height: auto;
+    width: 100%;
+  }
+
+  .experiencia, .certificates {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .expin, .certificates div {
+    padding: 20px 15px 15px 20px;
+  }
+
+  .projetos {
+    display: flex;
+    flex-direction: column; /* Alinhar projetos verticalmente */
+    align-items: center; /* Centralizar o conteúdo */
+  }
+
+  .projetos div {
+    top: -30px;
+    height: auto;
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin-bottom: 20px; /* Espaçamento entre os projetos */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar o conteúdo */
+  }
+
+  .projetos img {
+    width: 100%; /* Largura total da imagem dentro do div */
+    border-radius: 15px;
+  }
+
+  .projetos span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .projetos button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .profilePhoto {
+    position: relative;
+    width: 340px;
+    height: 525px;
+    border-radius: 15px;
+  }
+}
+
+
+/* Responsividade para iPhone SE (375x667) */
+@media screen and (max-width: 375px) {
+  body, html{
+      background: linear-gradient(to bottom, #192627, #004aad); 
+      width: 100%;
+      height: auto !important;
+      z-index: -2;
+  }
+
+  .center {
+    position: relative;
+    width: 320px;
+    height: 640px;
+    padding: 5px;
+  }
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .center::after, .card::before{
+    content: '';
+    position: absolute;
+    width: 325px;
+    height: 645px;
+    background-image: conic-gradient(from var(--angle), transparent 90%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+  }
+  .card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  }
+  
+  @keyframes spin {
+    from{
+      --angle: 0deg;
+    }  
+    to{
+      --angle: 360deg;
+    }
+  }
+
+
+  .navbar {
+    padding: 5px !important; /* Reduzir o padding */
+    border-radius: 15px;
+  }
+
+  .accordion {
+    font-size: 14px; /* Diminuir o tamanho da fonte */
+    padding: 8px; /* Reduzir o padding */
+  }
+
+  .content {
+    font-size: 14px; /* Diminuir o tamanho da fonte */
+    padding: 10px; /* Adicionar padding interno */
+  }
+
+  .row {
+    flex-direction: column; /* Alterar direção para coluna */
+  }
+
+  .col {
+    margin-bottom: 15px; /* Adicionar espaçamento inferior */
+  }
+
+  .home-leftSide h3 {
+    font-size: 18px; /* Ajustar o tamanho da fonte */
+  }
+
+  .home-leftSide button {
+    padding: 8px 16px; /* Reduzir padding do botão */
+    font-size: 14px; /* Ajustar tamanho da fonte */
+  }
+
+  .home-rightSide {
+    height: auto; /* Deixar a altura automática */
+    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
+  }
+
+  .experiencia {
+    padding: 20px; /* Reduzir padding interno */
+  }
+
+  .expin {
+    padding: 20px 10px 10px 20px; /* Reduzir padding interno */
+  }
+
+  .projetos div {
+    height: auto; /* Deixar a altura automática */
+  }
+
+  .projetos img {
+    width: 300px; /* Ajustar largura da imagem */
+  }
+
+  .projetos span{
+    width: 300px;
+  }
+
+  .projetos button {
+    padding: 8px 16px; /* Reduzir padding do botão */
+    font-size: 14px; /* Ajustar tamanho da fonte */
+  }
+
+  .profilePhoto{
+    position: relative;
+    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
+    height: auto; 
+    border-radius: 15px;
+  }
+
+}
