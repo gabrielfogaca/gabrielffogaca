@@ -49,34 +49,3 @@ function addFadeIn(repeat) {
     }
   });
 }
-
-document
-  .getElementById('contactForm')
-  .addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
-    const formData = new FormData(this);
-
-    fetch('https://formsubmit.co/ajax/gabrielfurlanfogaca@gmail.com', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success === 'true') {
-          // Exibe a mensagem de confirmação
-          document.getElementById('confirmationMessage').style.display =
-            'block';
-          // Fecha o modal após 3 segundos
-          setTimeout(() => {
-            $('#exampleModalCenter').modal('hide');
-          }, 3000); // Aguarda 3 segundos antes de fechar o modal
-        } else {
-          alert('Houve um erro ao enviar o formulário.');
-        }
-      })
-      .catch((error) => {
-        console.error('Erro:', error);
-        alert('Houve um erro ao enviar o formulário.');
-      });
-  });
