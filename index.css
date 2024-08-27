@@ -224,6 +224,10 @@ opacity: 0.5;
   width: 80px;
 }
 
+.certificates .col:hover{
+  box-shadow: inset 0 0 100px #004494;
+}
+
 .projetos{
 position: relative;
 }
