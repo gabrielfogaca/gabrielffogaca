@@ -34,7 +34,7 @@ body, html {
 }
 
 
-.center::after, .card::before{
+.center::after, .center::before{
   content: '';
   position: absolute;
   width: 905px;
@@ -48,7 +48,7 @@ body, html {
   border-radius: 15px;
   animation: 3s spin linear infinite;
 }
-.card::before{
+.center::before{
 filter: blur(1.5rem);
 opacity: 0.5;
 }
@@ -334,7 +334,7 @@ height: 500px;
     inherits: false;
   }
 
-  .center::after, .card::before {
+  .center::after, .center::before {
     content: '';
     position: absolute;
     width: 705px;
@@ -349,7 +349,7 @@ height: 500px;
     animation: 3s spin linear infinite;
   }
 
-  .card::before {
+  .center::before {
     filter: blur(1.5rem);
     opacity: 0.5;
   }
@@ -495,7 +495,7 @@ height: 500px;
     inherits: false;
   }
   
-  .center::after, .card::before{
+  .center::after, .center::before{
     content: '';
     position: absolute;
     width: 397px;
@@ -509,7 +509,7 @@ height: 500px;
     border-radius: 15px;
     animation: 3s spin linear infinite;
   }
-  .card::before{
+  .center::before{
   filter: blur(1.5rem);
   opacity: 0.5;
   }
@@ -659,7 +659,7 @@ height: 500px;
     inherits: false;
   }
   
-  .center::after, .card::before{
+  .center::after, .center::before{
     content: '';
     position: absolute;
     width: 385px;
@@ -673,7 +673,7 @@ height: 500px;
     border-radius: 15px;
     animation: 3s spin linear infinite;
   }
-  .card::before{
+  .center::before{
   filter: blur(1.5rem);
   opacity: 0.5;
   }
@@ -800,7 +800,7 @@ height: 500px;
     inherits: false;
   }
   
-  .center::after, .card::before{
+  .center::after, .center::before{
     content: '';
     position: absolute;
     width: 325px;
@@ -814,7 +814,7 @@ height: 500px;
     border-radius: 15px;
     animation: 3s spin linear infinite;
   }
-  .card::before{
+  .center::before{
   filter: blur(1.5rem);
   opacity: 0.5;
   }
@@ -934,7 +934,7 @@ height: 500px;
     inherits: false;
   }
 
-  .center::after, .card::before {
+  .center::after, .center::before {
     content: '';
     position: absolute;
     width: 785px;
@@ -949,7 +949,7 @@ height: 500px;
     animation: 3s spin linear infinite;
   }
 
-  .card::before {
+  .center::before {
     filter: blur(1.5rem);
     opacity: 0.5;
   }
