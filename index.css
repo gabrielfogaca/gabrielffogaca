@@ -281,10 +281,12 @@ opacity: 0.5;
 }
 
 
-
+.projetos p{
+  text-align: center;
+}
 
 .projetos div{
-height: 500px;
+height: 550px;
 }
 
 .projetos img{
