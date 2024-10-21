@@ -25,7 +25,6 @@
       <nav class="navbar">
         <button class="accordion stylenavbar" onclick="showContent('home')">GF</button>
         <button class="accordion" onclick="showContent('experience')">Experiência</button>
-        <button class="accordion" onclick="showContent('Certificados')">Certificados</button>
         <button class="accordion" onclick="showContent('projects')">Projetos</button>
       </nav>
       <div id="home" class="content active" style="display: block;">
@@ -54,7 +53,7 @@
         </div>
       </div>
       <div id="experience" class="content" style="display: none;">
-        <div class="container experiencia">
+        <div class="container experiencia overflowEx">
           <div class="expin">
             <div>
               <a href="https://www.unijui.edu.br/">
@@ -76,91 +75,134 @@
             <li>Atendimento ao usuario</li>
             <li>Organização e ajustes de demandas</li>
           </div>
-        </div>
-      </div>
-      <div id="Certificados" class="content" style="display: none;">
-        <div class="container text-center certificates">
-          <div class="row row-cols-1 row-cols-sm-2">
-            <div class="col">
-              <h4>React Completo</h4>
-              <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
-              <a href="https://www.origamid.com/certificate/780056e5" target="_blank"><button>Visualizar</button></a>
-            </div>
-            <div class="col">
-              <h4>Redux com React</h4>
-              <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
-              <a href="https://www.origamid.com/certificate/05f5dc0d" target="_blank"><button>Visualizar</button></a>
-            </div>
-            <div class="col">
-              <h4>UI Design para Iniciantes</h4>
-              <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
-              <a href="https://www.origamid.com/certificate/e6e82d26" target="_blank"><button>Visualizar</button></a>
-            </div>
-            <div class="col">
-              <h4>HTML e CSS para Iniciantes</h4>
-              <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
-              <a href="https://www.origamid.com/certificate/bedcdce4/" target="_blank"><button>Visualizar</button></a>
-            </div>
-          </div>
-          <div class="row">
-            <h4>Conhecimento e Habilidades</h4>
-          </div>
-          <div class="infinite-scroll">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div class="expin certificates">
+            <div class="row row-cols-1 row-cols-sm-2">
               <div class="col">
-                <img src="imgs/HTML-CSS.png" alt="">
-                <span>HTML & CSS</span>
+                <h4>React Completo</h4>
+                <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
+                <a href="https://www.origamid.com/certificate/780056e5" target="_blank"><button>Visualizar</button></a>
               </div>
               <div class="col">
-                <img src="imgs/js.png" alt="">
-                <span>JavaScript</span>
+                <h4>Redux com React</h4>
+                <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
+                <a href="https://www.origamid.com/certificate/05f5dc0d" target="_blank"><button>Visualizar</button></a>
               </div>
               <div class="col">
-                <img src="imgs/uiux.png" alt="">
-                <span>UI/UX</span>
+                <h4>UI Design para Iniciantes</h4>
+                <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
+                <a href="https://www.origamid.com/certificate/e6e82d26" target="_blank"><button>Visualizar</button></a>
               </div>
               <div class="col">
-                <img src="imgs/github.png" alt="">
-                <span>GitHub</span>
-              </div>
-              <div class="col">
-                <img src="imgs/php.png" alt="">
-                <span>PHP</span>
-              </div>
-              <div class="col">
-                <img src="imgs/react.png" alt="">
-                <span>React</span>
-              </div>
-              <div class="col">
-                <img src="imgs/redux.png" alt="">
-                <span>Redux</span>
-              </div>
-              <!-- Duplicate the content for infinite effect -->
-              <div class="col">
-                <img src="imgs/HTML-CSS.png" alt="">
-                <span>HTML & CSS</span>
-              </div>
-              <div class="col">
-                <img src="imgs/js.png" alt="">
-                <span>JavaScript</span>
-              </div>
-              <div class="col">
-                <img src="imgs/uiux.png" alt="">
-                <span>UI/UX</span>
-              </div>
-              <div class="col">
-                <img src="imgs/github.png" alt="">
-                <span>GitHub</span>
-              </div>
-              <div class="col">
-                <img src="imgs/php.png" alt="">
-                <span>PHP</span>
-              </div>
-              <div class="col">
-                <img src="imgs/react.png" alt="">
-                <span>React</span>
+                <h4>HTML e CSS para Iniciantes</h4>
+                <a href="https://www.origamid.com/" target="_blank"><span>Organização: Origammid</span></a>
+                <a href="https://www.origamid.com/certificate/bedcdce4/" target="_blank"><button>Visualizar</button></a>
               </div>
             </div>
+            <div class="row">
+              <h4>Conhecimento e Habilidades</h4>
+            </div>
+            <!-- Primeira linha: da esquerda para a direita -->
+            <div class="infinite-scroll">
+              <div class="row">
+                <div class="col">
+                  <img src="imgs/HTML-CSS.png" alt="">
+                  <span>HTML & CSS</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/js.png" alt="">
+                  <span>JavaScript</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/uiux.png" alt="">
+                  <span>UI/UX</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/github.png" alt="">
+                  <span>GitHub</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/php.png" alt="">
+                  <span>PHP</span>
+                </div>
+                <!-- Duplicar para criar o loop contínuo -->
+                <div class="col">
+                  <img src="imgs/HTML-CSS.png" alt="">
+                  <span>HTML & CSS</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/js.png" alt="">
+                  <span>JavaScript</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/uiux.png" alt="">
+                  <span>UI/UX</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/github.png" alt="">
+                  <span>GitHub</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/php.png" alt="">
+                  <span>PHP</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Segunda linha: da direita para a esquerda -->
+            <div class="infinite-scroll">
+              <div class="row">
+                <div class="col">
+                  <img src="imgs/react.png" alt="">
+                  <span>React</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/redux.png" alt="">
+                  <span>Redux</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/db2-logo.png" alt="">
+                  <span>DB2</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/firebase.png" alt="">
+                  <span>Firebase</span>
+                </div>
+                <!-- Duplicar para criar o loop contínuo -->
+                <div class="col">
+                  <img src="imgs/react.png" alt="">
+                  <span>React</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/redux.png" alt="">
+                  <span>Redux</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/db2-logo.png" alt="">
+                  <span>DB2</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/firebase.png" alt="">
+                  <span>Firebase</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/react.png" alt="">
+                  <span>React</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/redux.png" alt="">
+                  <span>Redux</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/db2-logo.png" alt="">
+                  <span>DB2</span>
+                </div>
+                <div class="col">
+                  <img src="imgs/firebase.png" alt="">
+                  <span>Firebase</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

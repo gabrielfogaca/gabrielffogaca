@@ -195,26 +195,34 @@ opacity: 0.5;
   width: 100%;
 }
 
-.infinite-scroll .row{
+.infinite-scroll .row,
+.infinite-scroll .row-reverse {
   display: flex;
-  width: calc(14 * 200px); /* Adjust based on the number of items and their width */
-  animation: scroll 15s linear infinite;
+  width: max-content;
 }
+
+/* Animação para a primeira linha (esquerda para direita) */
+.infinite-scroll .row {
+  animation: scroll 10s linear infinite;
+}
+
 
 .infinite-scroll .col {
   flex: 0 0 auto;
-  width: 200px; /* Adjust based on your item width */
+  width: 250px; /* Largura de cada item */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
 
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% / 2)); /* Scroll by half of the total width */
+    transform: translateX(-50%); /* Rola para a esquerda */
   }
 }
 
@@ -277,6 +285,25 @@ opacity: 0.5;
 
 /* Esconde a barra de rolagem no WebKit (Chrome, Safari) */
 .overflow::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+.overflowEx {
+  overflow: auto; /* Permite o scroll */
+  position: relative;
+  border-radius: 30px; /* Ajusta o arredondamento para cantos suaves */
+  width: 100%; /* Ajuste o tamanho conforme necessário */
+  height: 725px; /* Altura ajustável */
+  padding: 10px; /* Opcional: adiciona um padding interno */
+  box-sizing: border-box; /* Garante que o padding e as bordas sejam incluídos nas dimensões */
+  
+  /* Esconde a barra de rolagem no WebKit (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer e Edge */
+}
+
+/* Esconde a barra de rolagem no WebKit (Chrome, Safari) */
+.overflowEx::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem */
 }
 
@@ -470,13 +497,49 @@ height: 550px;
     padding: 30px 25px 25px 30px;
   }
 
+  .infinite-scroll {
+    overflow: hidden;
+    width: 100%;
+  }
+  
   .infinite-scroll .row {
     display: flex;
-    width: calc(14* 200px);
-    animation: scroll 15s linear infinite;
-    flex-direction: row;
-}
-
+    width: calc(10 * 100px); /* Ajuste baseado no número de itens e sua largura */
+    animation: scroll 20s linear infinite; /* Ajuste a duração da animação */
+  }
+  
+  .infinite-scroll .row-reverse {
+    display: flex;
+    width: calc(10 * 100px); /* Ajuste baseado no número de itens e sua largura */
+    animation: scroll-reverse 20s linear infinite; /* Animação da direita para esquerda */
+  }
+  
+  .infinite-scroll .col {
+    flex: 0 0 auto;
+    width: 100px; /* Largura de cada item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0); /* Começa do início */
+    }
+    to {
+      transform: translateX(calc(-100%)); /* Role por toda a largura */
+    }
+  }
+  
+  @keyframes scroll-reverse {
+    from {
+      transform: translateX(calc(-100%)); /* Começa no final */
+    }
+    to {
+      transform: translateX(0); /* Role de volta para o início */
+    }
+  }
+  
   .p1 {
     overflow-x: auto;
     overflow-y: auto !important;
@@ -633,12 +696,49 @@ height: 550px;
     max-height: 80vh; /* Limitar a altura para garantir que ambas caibam na tela */
   }
 
+  .infinite-scroll {
+    overflow: hidden;
+    width: 100%;
+  }
+  
   .infinite-scroll .row {
     display: flex;
-    width: calc(14* 200px);
-    animation: scroll 15s linear infinite;
-    flex-direction: row;
-}
+    width: calc(10 * 200px); /* Ajuste baseado no número de itens e sua largura */
+    animation: scroll 15s linear infinite; /* Ajuste a duração da animação */
+  }
+  
+  .infinite-scroll .row-reverse {
+    display: flex;
+    width: calc(10 * 200px); /* Ajuste baseado no número de itens e sua largura */
+    animation: scroll-reverse 10s linear infinite; /* Animação da direita para esquerda */
+  }
+  
+  .infinite-scroll .col {
+    flex: 0 0 auto;
+    width: 200px; /* Largura de cada item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0); /* Começa do início */
+    }
+    to {
+      transform: translateX(calc(-100%)); /* Role por toda a largura */
+    }
+  }
+  
+  @keyframes scroll-reverse {
+    from {
+      transform: translateX(calc(-100%)); /* Começa no final */
+    }
+    to {
+      transform: translateX(0); /* Role de volta para o início */
+    }
+  }
+  
 
   .expin, .certificates div {
     padding: 25px 20px 20px 25px;
@@ -802,11 +902,19 @@ height: 550px;
     padding: 20px;
     flex-grow: 1;
     overflow-y: auto;
-    max-height: 65vh;
+    max-height: 90vh;
   }
 
   .expin, .certificates div {
     padding: 20px 15px 15px 20px;
+  }
+  
+  .expin h3{
+    text-align: -webkit-left;
+  }
+
+  .expin h4{
+    text-align: -webkit-center;
   }
 
   .projetos {
