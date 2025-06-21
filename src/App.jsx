@@ -6,10 +6,12 @@ import './index.css'; // Comentado porque o arquivo index.css não foi encontrad
 import Inicio from './assets/components/gf.jsx';
 import Experiencia from './assets/components/experiencia.jsx';
 import Projetos from './assets/components/projetos.jsx';
+import Contato from './assets/components/contato';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [resolvedText, setResolvedText] = useState('');
+  const [lang, setLang] = useState('pt');
 
   useEffect(() => {
     let isCancelled = false;
@@ -94,11 +96,44 @@ const App = () => {
         </button>
       </nav>
 
+      <button
+        onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
+        style={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+          zIndex: 1000,
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          fontSize: '2rem',
+        }}
+        aria-label={
+          lang === 'pt' ? 'Switch to English' : 'Mudar para Português'
+        }
+      >
+        {lang === 'pt' ? (
+          <img
+            src="https://flagcdn.com/w40/br.png"
+            alt="Brasil"
+            style={{ width: 32, height: 24 }}
+          />
+        ) : (
+          <img
+            src="https://flagcdn.com/w40/us.png"
+            alt="EUA"
+            style={{ width: 32, height: 24 }}
+          />
+        )}
+      </button>
+
       {activeSection === 'home' && <Inicio />}
 
-      {activeSection === 'experience' && <Experiencia />}
+      {activeSection === 'experience' && <Experiencia lang={lang} />}
 
-      {activeSection === 'projects' && <Projetos />}
+      {activeSection === 'projects' && <Projetos lang={lang} />}
+
+      <Contato lang={lang} />
     </section>
   );
 };

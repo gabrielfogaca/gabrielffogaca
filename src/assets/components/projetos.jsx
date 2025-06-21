@@ -1,7 +1,30 @@
 // src/components/Projects.jsx
 import React from 'react';
 
-function Projects() {
+function Projects({ lang }) {
+  const textos = {
+    pt: {
+      titulo: 'Projetos',
+      botao: 'Visualizar',
+      descricao: [
+        'Foi desenvolvido um portfólio para a Sabrina Schreiber Engenharia, visando aumentar a visibilidade da empresa no mercado...',
+        'Foi criado um sistema web para a Mecânica Fogaça com funcionalidades como cadastro de clientes, peças, despesas...',
+        'Meu Porquinho foi desenvolvido como TCC, sendo um website voltado ao controle financeiro pessoal...',
+        'O website MyZoo foi desenvolvido para controle de vendas e despesas, auxiliando no acompanhamento financeiro...',
+      ],
+    },
+    en: {
+      titulo: 'Projects',
+      botao: 'View',
+      descricao: [
+        "A portfolio was developed for Sabrina Schreiber Engenharia to increase the company's visibility in the market...",
+        'A web system was created for Mecânica Fogaça with features such as customer, parts, and expense registration...',
+        'Meu Porquinho was developed as a final project, being a website focused on personal financial control...',
+        'The MyZoo website was developed for sales and expense control, assisting in financial monitoring...',
+      ],
+    },
+  };
+
   const projetos = [
     {
       titulo: 'Sabrina Schreiber Engenharia',
@@ -30,15 +53,6 @@ function Projects() {
       link: 'https://controlededinheiro-gff.netlify.app/',
       ativo: true,
     },
-    // {
-    //   titulo: 'MyZoo',
-    //   imagem: 'imgs/MyZoo.jpg',
-    //   tecnologias: 'HTML, CSS, JavaScript & Firebase',
-    //   descricao:
-    //     'O website MyZoo foi desenvolvido para controle de vendas e despesas, auxiliando no acompanhamento financeiro...',
-    //   link: '#',
-    //   ativo: false,
-    // },
   ];
 
   return (
@@ -65,7 +79,7 @@ function Projects() {
                     rel="noopener noreferrer"
                     className="btn btn-primary"
                   >
-                    Visualizar
+                    {textos[lang].botao}
                   </a>
                 ) : (
                   <button className="btn btn-secondary" disabled>
