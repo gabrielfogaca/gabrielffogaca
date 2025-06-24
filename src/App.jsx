@@ -2,11 +2,22 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import $ from 'jquery';
-import './index.css'; // Comentado porque o arquivo index.css não foi encontrado. Verifique o caminho ou crie o arquivo.
+import './index.css';
 import Inicio from './assets/components/gf.jsx';
 import Experiencia from './assets/components/experiencia.jsx';
 import Projetos from './assets/components/projetos.jsx';
 import Contato from './assets/components/contato';
+
+const textos = {
+  pt: {
+    experiencia: "Experiência",
+    projetos: "Projetos",
+  },
+  en: {
+    experiencia: "Experience",
+    projetos: "Projects",
+  }
+};
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -86,13 +97,13 @@ const App = () => {
           className="accordion"
           onClick={() => setActiveSection('experience')}
         >
-          Experiência
+          {textos[lang].experiencia}
         </button>
         <button
           className="accordion"
           onClick={() => setActiveSection('projects')}
         >
-          Projetos
+          {textos[lang].projetos}
         </button>
       </nav>
 
@@ -127,7 +138,7 @@ const App = () => {
         )}
       </button>
 
-      {activeSection === 'home' && <Inicio />}
+      {activeSection === 'home' && <Inicio lang={lang} />}
 
       {activeSection === 'experience' && <Experiencia lang={lang} />}
 

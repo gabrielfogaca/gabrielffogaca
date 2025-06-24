@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 
-function TypewriterHeading() {
-  const texts = ['Bem-vindo', 'Gabriel Furlan Fogaça'];
+function TypewriterHeading({ lang }) {
+  const texts = lang === 'pt'
+    ? ['Bem-vindo', 'Gabriel Furlan Fogaça']
+    : ['Welcome', 'Gabriel Furlan Fogaça'];
   const [displayed, setDisplayed] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
