@@ -9,8 +9,8 @@
 
   .center {
     position: relative;
-    width: 320px;
-    height: 640px;
+    width: 370px !important;
+    height: 820px !important;
     padding: 5px;
   }
   
@@ -60,6 +60,7 @@
   }
 
   .content {
+    margin-top: none;
     font-size: 14px; /* Diminuir o tamanho da fonte */
     padding: 10px; /* Adicionar padding interno */
   }
