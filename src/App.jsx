@@ -3,6 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import $ from 'jquery';
 import './index.css';
+import './indexIpadMini.css';
+import './indexIpadAir.css';
+import './indexIp14.css';
+import './indexIpSE.css';
+import './indexIpXr.css';
 import Inicio from './assets/components/gf.jsx';
 import Experiencia from './assets/components/experiencia.jsx';
 import Projetos from './assets/components/projetos.jsx';
@@ -113,14 +118,12 @@ const App = () => {
         onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
         style={{
           position: 'absolute',
-          top: 20,
-          right: 20,
-          zIndex: 1000,
           background: 'none',
           border: 'none',
           cursor: 'pointer',
           fontSize: '2rem',
         }}
+        className="btn-language"
         aria-label={
           lang === 'pt' ? 'Switch to English' : 'Mudar para Português'
         }

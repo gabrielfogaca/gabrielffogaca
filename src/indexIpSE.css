@@ -1,0 +1,121 @@
+/* Responsividade para iPhone SE (375x667) */
+@media screen and (max-width: 375px) {
+  body, html{
+      background: linear-gradient(to bottom, #192627, #004aad); 
+      width: 100%;
+      height: auto !important;
+      z-index: -2;
+  }
+
+  .center {
+    position: relative;
+    width: 320px;
+    height: 640px;
+    padding: 5px;
+  }
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .center::after, .center::before{
+    content: '';
+    position: absolute;
+    width: 325px;
+    height: 645px;
+    background-image: conic-gradient(from var(--angle), transparent 90%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+  }
+  .center::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  }
+  
+  @keyframes spin {
+    from{
+      --angle: 0deg;
+    }  
+    to{
+      --angle: 360deg;
+    }
+  }
+
+
+  .navbar {
+    padding: 5px !important; /* Reduzir o padding */
+    border-radius: 15px;
+  }
+
+  .accordion {
+    font-size: 14px; /* Diminuir o tamanho da fonte */
+    padding: 8px; /* Reduzir o padding */
+  }
+
+  .content {
+    font-size: 14px; /* Diminuir o tamanho da fonte */
+    padding: 10px; /* Adicionar padding interno */
+  }
+
+  .row {
+    flex-direction: column; /* Alterar direção para coluna */
+  }
+
+  .col {
+    margin-bottom: 15px; /* Adicionar espaçamento inferior */
+  }
+
+  .home-leftSide h3 {
+    font-size: 18px; /* Ajustar o tamanho da fonte */
+  }
+
+  .home-leftSide button {
+    padding: 8px 16px; /* Reduzir padding do botão */
+    font-size: 14px; /* Ajustar tamanho da fonte */
+  }
+
+  .home-rightSide {
+    height: auto; /* Deixar a altura automática */
+    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
+  }
+
+  .experiencia {
+    padding: 20px; /* Reduzir padding interno */
+  }
+
+  .expin {
+    padding: 20px 10px 10px 20px; /* Reduzir padding interno */
+  }
+
+  .projetos div {
+    height: auto; /* Deixar a altura automática */
+  }
+
+  .projetos img {
+    width: 300px; /* Ajustar largura da imagem */
+  }
+
+  .projetos span{
+    width: 300px;
+  }
+
+  .projetos button {
+    padding: 8px 16px; /* Reduzir padding do botão */
+    font-size: 14px; /* Ajustar tamanho da fonte */
+  }
+
+  .profilePhoto{
+    position: relative;
+    width: 100%; /* Ajustar a largura para ocupar todo o espaço disponível */
+    height: auto; 
+    border-radius: 15px;
+  }
+
+}

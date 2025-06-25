@@ -62,6 +62,7 @@ function Inicio({ lang }) {
           <img
             className="profilePhoto"
             src="imgs/eu.jpeg"
+            z
             alt={textos[lang].altFoto}
           />
         </div>

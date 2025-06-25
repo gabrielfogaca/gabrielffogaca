@@ -195,9 +195,9 @@ function Experiencia({ lang }) {
           ))}
         </div>
       ))}
-      <h4 className="text-center">{textos[lang].certific}</h4>
 
       <div className="expin certificates">
+        <h4 className="text-center">{textos[lang].certific}</h4>
         <div className="row row-cols-1 row-cols-sm-2">
           {textos[lang].certificados.map((cert, idx) => (
             <div className="col" key={idx}>
@@ -214,7 +214,6 @@ function Experiencia({ lang }) {
         <div className="row">
           <h4 className="text-center">{textos[lang].conhecimento}</h4>
         </div>
-        {/* Mantém as skills como estavam, pois são nomes técnicos */}
         <div className="infinite-scroll">
           <div className="row">
             <div className="col">
