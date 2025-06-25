@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 
 function TypewriterHeading({ lang }) {
-  const texts = lang === 'pt'
-    ? ['Bem-vindo', 'Gabriel Furlan Fogaça']
-    : ['Welcome', 'Gabriel Furlan Fogaça'];
+  const texts =
+    lang === 'pt'
+      ? ['Bem-vindo', 'Eu sou Gabriel Furlan Fogaça']
+      : ['Welcome', "I'm Gabriel Furlan Fogaça"];
   const [displayed, setDisplayed] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -37,7 +38,14 @@ function TypewriterHeading({ lang }) {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, textIndex, texts]);
 
-  return <h1 className="heading">{displayed}</h1>;
+  return (
+    <h1
+      className="heading"
+      style={{ fontSize: lang === 'en' ? '2.1rem' : '1.9rem' }}
+    >
+      {displayed}
+    </h1>
+  );
 }
 
 export default TypewriterHeading;
