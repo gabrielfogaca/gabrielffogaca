@@ -10,13 +10,15 @@ import Contato from './assets/components/contato';
 
 const textos = {
   pt: {
-    experiencia: "Experiência",
-    projetos: "Projetos",
+    Inicio: 'Início',
+    experiencia: 'Experiência',
+    projetos: 'Projetos',
   },
   en: {
-    experiencia: "Experience",
-    projetos: "Projects",
-  }
+    Inicio: 'Home',
+    experiencia: 'Experience',
+    projetos: 'Projects',
+  },
 };
 
 const App = () => {
@@ -91,7 +93,7 @@ const App = () => {
           className="accordion stylenavbar"
           onClick={() => setActiveSection('home')}
         >
-          GF
+          {textos[lang].Inicio}
         </button>
         <button
           className="accordion"
