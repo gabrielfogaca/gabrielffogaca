@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import $ from 'jquery';
 import './index.css';
 import './indexIpadMini.css';
-import './indexIpadAir.css';
+// import './indexIpadAir.css';
 import './indexIp14.css';
 import './indexIpSE.css';
 import './indexIpXr.css';

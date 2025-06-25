@@ -211,7 +211,7 @@ function Experiencia({ lang }) {
             </div>
           ))}
         </div>
-        <div className="row">
+        <div className="row row-cols-1">
           <h4 className="text-center">{textos[lang].conhecimento}</h4>
         </div>
         <div className="infinite-scroll">
